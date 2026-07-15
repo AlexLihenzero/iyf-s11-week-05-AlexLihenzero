@@ -116,3 +116,131 @@ console.log("List items:", navList.children);
 const footer = document.querySelector("footer");
 
 console.log("Footer parent:", footer.parentElement);
+
+// ===================================
+// Lesson 9 Task 9.3
+// Exercise 1: Text Content
+// ===================================
+
+const pageTitle = document.querySelector("h1");
+
+// Read text
+console.log("textContent:", pageTitle.textContent);
+console.log("innerText:", pageTitle.innerText);
+
+// Change text
+pageTitle.textContent = "Welcome to My DOM Practice";
+
+// ===================================
+// Exercise 2: HTML Content
+// ===================================
+
+const articleContent = document.querySelector("article");
+
+// Read HTML
+console.log(articleContent.innerHTML);
+
+// Replace the article
+articleContent.innerHTML = `
+    <h2>Updated Article</h2>
+    <p>This is new content.</p>
+`;
+
+// ===================================
+// Exercise 3: Attributes
+// ===================================
+
+const homeLink = document.querySelector(".nav-link");
+
+// Read attributes
+console.log("href attribute:", homeLink.getAttribute("href"));
+console.log("href property:", homeLink.href);
+
+// Change the link
+homeLink.setAttribute("href", "https://example.com");
+
+// Check for an attribute
+console.log("Has target?", homeLink.hasAttribute("target"));
+
+// Remove target if it exists
+homeLink.removeAttribute("target");
+
+// ===================================
+// Exercise 4: Styles
+// ===================================
+
+const mainContainer = document.querySelector(".container");
+
+// Change styles
+mainContainer.style.backgroundColor = "#f0f0f0";
+mainContainer.style.padding = "30px";
+mainContainer.style.borderRadius = "8px";
+
+// Apply multiple styles
+Object.assign(mainContainer.style, {
+    backgroundColor: "#333",
+    color: "white",
+    padding: "20px"
+});
+
+// ===================================
+// Task 9.4 - Exercise 1
+// Creating Elements
+// ===================================
+
+// Create a new paragraph
+const newParagraph = document.createElement("p");
+
+newParagraph.textContent = "This is a new paragraph!";
+newParagraph.className = "content highlight";
+
+// Select the article
+const articleSection = document.querySelector("article");
+
+// Add the paragraph at the end
+articleSection.appendChild(newParagraph);
+
+// Create another paragraph
+const secondParagraph = document.createElement("p");
+
+secondParagraph.textContent = "I was added using append().";
+
+// Add it to the end
+articleSection.append(secondParagraph);
+
+// ===================================
+// Task 9.4 - Exercise 2
+// Removing Elements
+// ===================================
+
+// Remove the last navigation item
+const navigation = document.querySelector("nav");
+const lastNavItem = navigation.querySelector("li:last-child");
+
+lastNavItem.remove();
+
+// ===================================
+// Build: Add Navigation Items
+// ===================================
+
+function addNavItem(text, href) {
+    // Create the <li>
+    const li = document.createElement("li");
+
+    // Create the <a>
+    const link = document.createElement("a");
+
+    link.textContent = text;
+    link.href = href;
+    link.className = "nav-link";
+
+    // Put the link inside the list item
+    li.appendChild(link);
+
+    // Add the list item to the navigation
+    document.querySelector(".nav-list").appendChild(li);
+}
+
+// Test
+addNavItem("Blog", "/blog");
+addNavItem("Portfolio", "/portfolio");
