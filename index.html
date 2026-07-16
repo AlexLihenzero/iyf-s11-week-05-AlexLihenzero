@@ -4,19 +4,30 @@
     <meta charset="UTF-8">
     <title>DOM Practice</title>
     <style>
-        .highlight { background-color: yellow; }
-        .container { padding: 20px; border: 1px solid #ccc; }
-    </style>
+    .highlight { background-color: yellow; }
+    .container { padding: 20px; border: 1px solid #ccc; }
+
+    .error {
+        border: 2px solid red;
+    }
+
+    .error-message {
+        color: red;
+        font-size: 14px;
+    }
+</style>
+</head>
+
 </head>
 <body>
     <header id="main-header">
         <h1>DOM Practice</h1>
         <nav>
             <ul class="nav-list">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">About</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
-            </ul>
+    <li class="item"><a href="#" class="nav-link">Home</a></li>
+    <li class="item"><a href="#" class="nav-link">About</a></li>
+    <li class="item"><a href="#" class="nav-link">Contact</a></li>
+</ul>
         </nav>
     </header>
     
@@ -37,10 +48,25 @@
         </section>
     </main>
     
-    <footer>
+        <footer>
         <p>&copy; 2026</p>
     </footer>
-    
+
+    <div id="grandparent" style="padding:20px; background:#ddd; margin-top:20px;">
+        Grandparent
+
+        <div id="parent" style="padding:20px; background:#bbb;">
+            Parent
+
+            <div id="child" style="padding:20px; background:#999;">
+                Child
+            </div>
+
+        </div>
+    </div>
+
     <script src="dom.js"></script>
+    <script src="events.js"></script>
+
 </body>
 </html>

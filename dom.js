@@ -41,12 +41,12 @@ const allContent = document.querySelectorAll(".content");
 console.log("All content:", allContent);
 
 // 3. The form with id "contact-form"
-const form = document.getElementById("contact-form");
-console.log("Form:", form);
+const contactForm = document.getElementById("contact-form");
+console.log("Form:", contactForm);
 
 // 4. The email input
-const emailInput = document.getElementById("email");
-console.log("Email input:", emailInput);
+const nameField = document.getElementById("name");
+const emailField = document.getElementById("email");
 
 // 5. All list items in the nav
 const navItems = document.querySelectorAll(".nav-list li");
@@ -108,9 +108,9 @@ const articleElement = document.querySelector("article");
 console.log("Section:", articleElement.nextElementSibling);
 
 // 4. Select the ul, then get all its child li elements
-const navList = document.querySelector(".nav-list");
+const navItemsList = document.querySelector(".nav-list");
 
-console.log("List items:", navList.children);
+console.log("List items:", navItemsList.children);
 
 // 5. Start from the footer and navigate up to the body
 const footer = document.querySelector("footer");
@@ -156,8 +156,8 @@ const homeLink = document.querySelector(".nav-link");
 console.log("href attribute:", homeLink.getAttribute("href"));
 console.log("href property:", homeLink.href);
 
-// Change the link
-homeLink.setAttribute("href", "https://example.com");
+// change link
+homeLink.setAttribute("href", "https://newexample.com");
 
 // Check for an attribute
 console.log("Has target?", homeLink.hasAttribute("target"));
