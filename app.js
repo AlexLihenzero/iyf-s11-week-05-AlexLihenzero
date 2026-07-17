@@ -209,3 +209,27 @@ updateItemsLeft();
     }
 
 });
+
+// ===================================
+// Edit Task (Double Click)
+// ===================================
+
+todoList.addEventListener("dblclick", function(event) {
+
+    if (event.target.tagName === "SPAN") {
+
+        const currentText = event.target.textContent;
+
+        const newText = prompt("Edit task:", currentText);
+
+        if (newText !== null && newText.trim() !== "") {
+
+            event.target.textContent = newText.trim();
+
+            console.log("Task updated!");
+
+        }
+
+    }
+
+});
